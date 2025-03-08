@@ -20,14 +20,11 @@
         </CardDescription> -->
           </CardHeader>
           <CardContent>
-            <TelegramLoginWidget mode="callback" telegram-login="onson_mail_bot" @callback="testCallback"
-              requestAccess="write" size="large" />
             <div class="grid gap-6">
               <div class="flex flex-col gap-4">
-                <Button type="button" @click="testCallback" variant="ghost" class="w-full">
-                  <img width="24" src="/assets/telegram.svg" alt="" />
-                  {{ $t('Войти через Telegram') }}
-                </Button>
+                <TelegramLoginWidget mode="callback" telegram-login="onson_mail_bot"
+                  requestAccess="write" size="large" class="flex justify-center" 
+                  @callback="telegramCallback"/>
               </div>
               <div
                 class="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
@@ -36,7 +33,7 @@
                 </span>
               </div>
               <div class="grid gap-6">
-                <NuxtPage/>
+                <NuxtPage />
               </div>
             </div>
           </CardContent>
@@ -50,8 +47,8 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
-const telegramCallback = (user: any) => {
+<script setup>
+const telegramCallback = (user) => {
   console.log(user);
 }
 </script>
