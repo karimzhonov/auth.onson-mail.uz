@@ -9,7 +9,7 @@ const lang = computed(() => locales.value.find((v) => v.code === locale.value))
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="ghost">
+      <Button variant="secondary">
         {{ lang.name }}
       </Button>
     </DropdownMenuTrigger>

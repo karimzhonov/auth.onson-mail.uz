@@ -1,6 +1,6 @@
 <template>
   <div class="flex min-h-svh flex-col items-center justify-center gap-6 bg-background p-6 md:p-10">
-    <div class="absolute top-10 right-10 flex justify-end items-center gap-2 px-4">
+    <div class="fixed bottom-[5vh] right-[5vw] flex justify-end items-center gap-2 px-4">
       <LangSwitcher />
       <ThemeSwitcher />
     </div>
@@ -52,7 +52,7 @@ export default {
   name: 'Default',
   methods: {
     async telegramCallback(data) {
-      const r = await this.$api.post('/oauth/telegram/', values)
+      const r = await this.$api.post('/oauth/telegram/', data)
       token.value = r?.data
       redirect()
     }
