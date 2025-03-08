@@ -17,4 +17,4 @@ ENV NITRO_PORT=4000
 EXPOSE 4000
 
 RUN npm run build
-CMD ["npm", "run", "serve"]
+CMD ["npm", "run", "preview"]
