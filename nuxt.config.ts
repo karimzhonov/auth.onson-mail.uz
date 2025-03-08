@@ -16,7 +16,9 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
   ],
   colorMode: {
-    classSuffix: ''
+    classSuffix: '',
+    preference: 'light',
+    fallback: 'dark',
   },
   shadcn: {
     /**

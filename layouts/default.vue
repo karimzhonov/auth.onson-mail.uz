@@ -51,7 +51,7 @@
 export default {
   name: 'Default',
   methods: {
-    telegramCallback(data) {
+    async telegramCallback(data) {
       const r = await this.$api.post('/oauth/telegram/', values)
       token.value = r?.data
       redirect()
