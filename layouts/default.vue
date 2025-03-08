@@ -47,8 +47,15 @@
     </div>
   </div>
 </template>
-<script setup>
-const telegramCallback = (user) => {
-  console.log(user);
+<script>
+export default {
+  name: 'Default',
+  methods: {
+    telegramCallback(data) {
+      const r = await this.$api.post('/oauth/telegram/', values)
+      token.value = r?.data
+      redirect()
+    }
+  }
 }
 </script>
