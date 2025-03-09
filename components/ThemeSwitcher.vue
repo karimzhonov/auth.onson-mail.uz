@@ -7,7 +7,7 @@ const colorMode = useColorMode()
 
 <template>
   <Button variant="secondary" @click="colorMode.preference == 'dark' ? colorMode.preference = 'light' : colorMode.preference = 'dark'">
-    <Moon v-if="colorMode.preference == 'dark'"/>
-    <Sun v-else"/>
+    <Moon v-if="colorMode.preference === 'dark'"/>
+    <Sun v-if="colorMode.preference === 'light'""/>
   </Button>
 </template>
