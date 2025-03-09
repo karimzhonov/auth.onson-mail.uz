@@ -16,8 +16,7 @@ export function valueUpdater<T extends Updater<any>>(updaterOrValue: T, ref: Ref
 }
 
 export function redirect() {
-  let next = `https://onson-mail.uz`
+  let next = useRoute().query.next ?? `https://onson-mail.uz`
   next = `${next}?access=${token.value.access}&refresh=${token.value.refresh}`
-  if (useRoute().query.next) next = `${next}&next=${useRoute().query.next}`
   window.location.href = next
 }
