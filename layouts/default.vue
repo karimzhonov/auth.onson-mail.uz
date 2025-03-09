@@ -48,6 +48,8 @@
   </div>
 </template>
 <script>
+import { token } from "@/composables"
+
 export default {
   name: 'Default',
   methods: {
