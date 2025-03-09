@@ -49,6 +49,7 @@
 </template>
 <script>
 import { token } from "@/composables"
+import { redirect } from '~/lib/utils'
 
 export default {
   name: 'Default',
