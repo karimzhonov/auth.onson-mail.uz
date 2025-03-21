@@ -3,22 +3,22 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   runtimeConfig: {
-    TELEGRAM_TOKEN: process.env.TELEGRAM_TOKEN,
     public: {
       NUXT_APP_BACKEND_HOST: process.env.NUXT_APP_BACKEND_HOST,
+      NUXT_APP_GOOGLE_CLIENT_ID: process.env.NUXT_APP_GOOGLE_CLIENT_ID
     }
   },
   modules: [
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
     'nuxt-telegram-auth',
-    '@nuxtjs/color-mode',
+    // '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
   ],
   colorMode: {
-    classSuffix: '',
-    preference: 'light',
-    fallback: 'dark',
+    preference: "light", // Принудительно включаем светлую тему
+    fallback: "light", // Запасной вариант
+    classSuffix: "",
   },
   shadcn: {
     /**

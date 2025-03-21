@@ -2,7 +2,7 @@
   <div class="flex min-h-svh flex-col items-center justify-center gap-6 bg-background p-6 md:p-10">
     <div class="fixed bottom-[5vh] right-[5vw] flex justify-end items-center gap-2 px-4">
       <LangSwitcher />
-      <ThemeSwitcher />
+      <!-- <ThemeSwitcher /> -->
     </div>
     <div class="flex w-full max-w-sm flex-col gap-6">
       <a href="#" class="flex items-center gap-2 self-center font-medium text-xl">
@@ -22,9 +22,8 @@
           <CardContent>
             <div class="grid gap-6">
               <div class="flex flex-col gap-4">
-                <TelegramLoginWidget mode="callback" telegram-login="onson_mail_bot"
-                  requestAccess="write" size="large" class="flex justify-center" 
-                  @callback="telegramCallback"/>
+                <TelegramAuthButton />
+                <GoogleAuthButton />
               </div>
               <div
                 class="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
@@ -47,18 +46,3 @@
     </div>
   </div>
 </template>
-<script>
-import { token } from "@/composables"
-import { redirect } from '~/lib/utils'
-
-export default {
-  name: 'Default',
-  methods: {
-    async telegramCallback(data) {
-      const r = await this.$api.post('/oauth/telegram/', data)
-      token.value = r?.data
-      redirect()
-    }
-  }
-}
-</script>
